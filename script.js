@@ -32,36 +32,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const langToggle = document.getElementById('langToggle');
     const langLabel = document.getElementById('langLabel');
 
-    // HTML templates for elements that contain inner HTML (spans, etc.)
+    // HTML templates for elements that contain inner HTML (spans with gradients, etc.)
     const htmlTemplates = {
         heroTitle: {
             en: 'Your <span class="text-gradient">Full-Stack Tech</span> Engineering Partner',
-            ar: 'شريكك الهندسي <span class="text-gradient">التقني</span> من الأول للآخر'
+            ar: 'إحنا اللي بنبني <span class="text-gradient">الحاجات</span> اللي انت محتاجها'
         },
         servicesTitle: {
             en: 'Core <span class="text-gradient">Capabilities</span>',
-            ar: 'إيه اللي <span class="text-gradient">بنعمله</span>'
+            ar: 'بنعمل إيه <span class="text-gradient">بالظبط</span>'
         },
         processTitle: {
             en: 'How We <span class="text-gradient">Deliver</span>',
-            ar: 'شغلنا بيمشي <span class="text-gradient">إزاي</span>'
+            ar: 'إحنا بنشتغل <span class="text-gradient">إزاي</span>'
         },
         pricingTitle: {
             en: 'Transparent <span class="text-gradient">Pricing</span>',
-            ar: 'الأسعار <span class="text-gradient">بالصراحة</span>'
+            ar: 'الأسعار بدون <span class="text-gradient">لف ودوران</span>'
         },
         portfolioTitle: {
             en: 'Proven <span class="text-gradient">Results</span>',
-            ar: 'نتايج <span class="text-gradient">حقيقية</span>'
+            ar: 'ده اللي عملناه <span class="text-gradient">فعلاً</span>'
         },
         auditTitle: {
             en: 'Get a <span class="text-gradient">Free Infrastructure</span> Audit (Worth $299)',
-            ar: 'احصل على <span class="text-gradient">أوديت مجاني</span> للإنفراستركتشر (بقيمة $299)'
+            ar: 'خد <span class="text-gradient">أوديت مجاني</span> للإنفراستركتشر بتاعك'
         },
         finalCtaTitle: {
             en: 'Ready to Scale <span class="text-gradient">Without Downtime?</span>',
-            ar: 'مستعد تكبّر <span class="text-gradient">من غير ما تقع؟</span>'
+            ar: 'خلينا نبنيها <span class="text-gradient">صح من الأول</span>'
         }
+    };
+
+    // Select dropdown translations
+    const providerOptions = {
+        en: ['Select Provider', 'AWS', 'Google Cloud', 'Azure', 'Other / On-premise'],
+        ar: ['اختار', 'AWS', 'Google Cloud', 'Azure', 'غيره / محلي']
     };
 
     function applyLanguage(lang) {
@@ -69,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-en]').forEach(el => {
             const text = lang === 'ar' ? el.dataset.ar : el.dataset.en;
             if (text) {
-                // Only set textContent for elements that don't contain child elements with their own translations
+                // Skip elements that contain child elements with their own translations
                 const hasTranslatableChildren = el.querySelector('[data-en]');
                 if (!hasTranslatableChildren) {
                     el.textContent = text;
@@ -100,12 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
             input.placeholder = lang === 'ar' ? input.dataset.placeholderAr : input.dataset.placeholderEn;
         });
 
-        // Handle select options
-        document.querySelectorAll('select option[data-en]').forEach(opt => {
-            opt.textContent = lang === 'ar' ? opt.dataset.ar : opt.dataset.en;
-        });
+        // Handle select dropdown options
+        const select = document.getElementById('provider');
+        if (select) {
+            providerOptions[lang].forEach((text, i) => {
+                if (select.options[i]) select.options[i].text = text;
+            });
+        }
 
-        // Re-append icon to CTA buttons that have icons
+        // Re-append icon to hero CTA button
         const heroCta = document.querySelector('.hero-actions .btn-primary');
         if (heroCta) {
             const ctaText = lang === 'ar' ? heroCta.dataset.ar : heroCta.dataset.en;
@@ -196,7 +205,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             } else {
-                // Reverse animation when leaving viewport
                 entry.target.classList.remove('visible');
             }
         });
@@ -222,11 +230,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalText = btn.innerHTML;
             const currentLang = root.getAttribute('data-lang');
             
-            btn.innerHTML = '<i class="ph ph-spinner ph-spin"></i> ' + (currentLang === 'ar' ? 'جاري المعالجة...' : 'Processing...');
+            btn.innerHTML = '<i class="ph ph-spinner ph-spin"></i> ' + (currentLang === 'ar' ? 'ثانية واحدة...' : 'Processing...');
             btn.style.pointerEvents = 'none';
             
             setTimeout(() => {
-                btn.innerHTML = '<i class="ph ph-check-circle"></i> ' + (currentLang === 'ar' ? 'تم طلب الأوديت!' : 'Audit Requested!');
+                btn.innerHTML = '<i class="ph ph-check-circle"></i> ' + (currentLang === 'ar' ? 'تم! هنتواصل معاك قريب' : 'Audit Requested!');
                 btn.classList.add('btn-glow');
                 auditForm.reset();
                 
@@ -245,7 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hero && heroGlow && heroGrid) {
         hero.addEventListener('mousemove', (e) => {
-            // Radial Glow follows mouse
             const rect = hero.getBoundingClientRect();
             const x = ((e.clientX - rect.left) / rect.width) * 100;
             const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -253,13 +260,11 @@ document.addEventListener('DOMContentLoaded', () => {
             heroGlow.style.setProperty('--x', `${x}%`);
             heroGlow.style.setProperty('--y', `${y}%`);
             
-            // Grid Subtle Parallax
             const moveX = (window.innerWidth / 2 - e.clientX) * 0.02;
             const moveY = (window.innerHeight / 2 - e.clientY) * 0.02;
             heroGrid.style.transform = `translate(${moveX}px, ${moveY}px)`;
         });
 
-        // Reset when mouse leaves hero section
         hero.addEventListener('mouseleave', () => {
             heroGlow.style.setProperty('--x', '50%');
             heroGlow.style.setProperty('--y', '50%');
