@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -26,16 +26,19 @@
                 <i class="ph-fill ph-git-branch"></i> EgDev
             </a>
             <nav class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#process">Process</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#portfolio">Cases</a>
+                <a href="#services" data-en="Services" data-ar="خدماتنا">Services</a>
+                <a href="#process" data-en="Process" data-ar="شغلنا إزاي">Process</a>
+                <a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a>
+                <a href="#portfolio" data-en="Cases" data-ar="أعمالنا">Cases</a>
             </nav>
             <div class="nav-actions">
+                <button class="theme-toggle" id="langToggle" aria-label="Toggle Language">
+                    <span id="langLabel">ع</span>
+                </button>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
                     <i class="ph ph-sun" id="themeIcon"></i>
                 </button>
-                <a href="#audit" class="btn btn-primary btn-small">Get Audit</a>
+                <a href="#audit" class="btn btn-primary btn-small" data-en="Get Audit" data-ar="اتكلم معانا">Get Audit</a>
                 
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="ph ph-list"></i>
@@ -45,11 +48,11 @@
         
         <!-- Mobile Navigation overlay -->
         <div class="mobile-nav" id="mobileNav">
-            <a href="#services" class="mobile-link">Services</a>
-            <a href="#process" class="mobile-link">Process</a>
-            <a href="#pricing" class="mobile-link">Pricing</a>
-            <a href="#portfolio" class="mobile-link">Case Studies</a>
-            <a href="#audit" class="btn btn-primary mobile-cta">Get Free Audit</a>
+            <a href="#services" class="mobile-link" data-en="Services" data-ar="خدماتنا">Services</a>
+            <a href="#process" class="mobile-link" data-en="Process" data-ar="شغلنا إزاي">Process</a>
+            <a href="#pricing" class="mobile-link" data-en="Pricing" data-ar="الأسعار">Pricing</a>
+            <a href="#portfolio" class="mobile-link" data-en="Case Studies" data-ar="أعمالنا">Case Studies</a>
+            <a href="#audit" class="btn btn-primary mobile-cta" data-en="Get Free Audit" data-ar="احجز أوديت مجاني">Get Free Audit</a>
         </div>
     </header>
 
@@ -62,20 +65,20 @@
             
             <div class="container hero-content align-center">
                 <div class="badge fade-in-up">
-                    <span class="badge-dot"></span> DevOps · Cloud · Networking · SaaS
+                    <span class="badge-dot"></span> <span data-en="DevOps · Cloud · Networking · SaaS" data-ar="ديف أوبس · كلاود · نتووركينج · ساس">DevOps · Cloud · Networking · SaaS</span>
                 </div>
-                <h1 class="hero-title fade-in-up delay-1">
+                <h1 class="hero-title fade-in-up delay-1" data-en="Your Full-Stack Tech Engineering Partner" data-ar="شريكك الهندسي التقني من الأول للآخر">
                     Your <span class="text-gradient">Full-Stack Tech</span> Engineering Partner
                 </h1>
-                <p class="hero-subtitle fade-in-up delay-2">
+                <p class="hero-subtitle fade-in-up delay-2" data-en="We build, automate, and scale — from cloud infrastructure and DevOps pipelines to enterprise networks and SaaS platforms. One team, end-to-end." data-ar="بنبني، بنأتمت، وبنكبّر — من الكلاود والـ DevOps للنتووركينج وتطوير الـ SaaS. فريق واحد، كل حاجة.">
                     We build, automate, and scale — from cloud infrastructure and DevOps pipelines to enterprise networks and SaaS platforms. One team, end-to-end.
                 </p>
                 <div class="hero-actions fade-in-up delay-3">
-                    <a href="#audit" class="btn btn-primary btn-glow">
+                    <a href="#audit" class="btn btn-primary btn-glow" data-en="Book Free Infrastructure Audit" data-ar="احجز أوديت مجاني">
                         Book Free Infrastructure Audit
                         <i class="ph ph-arrow-right"></i>
                     </a>
-                    <a href="#portfolio" class="btn btn-secondary">
+                    <a href="#portfolio" class="btn btn-secondary" data-en="View Case Studies" data-ar="شوف أعمالنا">
                         View Case Studies
                     </a>
                 </div>
@@ -85,7 +88,7 @@
         <!-- 2) Trust Section -->
         <section class="trust-section section-padding">
             <div class="container align-center">
-                <p class="trust-subtitle fade-in-up">Built with industry-leading technologies</p>
+                <p class="trust-subtitle fade-in-up" data-en="Built with industry-leading technologies" data-ar="بنشتغل بأحسن تكنولوجيا في السوق">Built with industry-leading technologies</p>
                 
                 <div class="marquee-container fade-in-up delay-1">
                     <div class="marquee-content">
@@ -117,58 +120,58 @@
         <section class="services section-padding" id="services">
             <div class="container">
                 <div class="section-header align-center fade-in-up">
-                    <h2 class="section-title">Core <span class="text-gradient">Capabilities</span></h2>
-                    <p class="section-subtitle">Comprehensive engineering solutions to build, secure, and scale your product.</p>
+                    <h2 class="section-title" data-en="Core Capabilities" data-ar="إيه اللي بنعمله">Core <span class="text-gradient">Capabilities</span></h2>
+                    <p class="section-subtitle" data-en="Comprehensive engineering solutions to build, secure, and scale your product." data-ar="من الـ DevOps والكلاود للنتووركينج وتطوير الويب — بنغطي كل حاجة.">Comprehensive engineering solutions to build, secure, and scale your product.</p>
                 </div>
                 
                 <div class="services-grid bento-grid">
                     <!-- Service 1 -->
                     <div class="service-card glass-panel bento-large fade-in-up">
                         <div class="icon-box"><i class="ph ph-git-branch"></i></div>
-                        <h3>DevOps Implementation</h3>
-                        <p>End-to-end CI/CD pipelines, automated testing, and seamless deployment workflows to accelerate your release cycles.</p>
+                        <h3 data-en="DevOps Implementation" data-ar="تطبيق الـ DevOps">DevOps Implementation</h3>
+                        <p data-en="End-to-end CI/CD pipelines, automated testing, and seamless deployment workflows to accelerate your release cycles." data-ar="بنبني CI/CD pipelines من الأول للآخر، اختبارات أوتوماتيك، وعمليات نشر سلسة عشان نسرّع دورة الإصدارات بتاعتك.">End-to-end CI/CD pipelines, automated testing, and seamless deployment workflows to accelerate your release cycles.</p>
                     </div>
                     
                     <!-- Service 2 -->
                     <div class="service-card glass-panel fade-in-up delay-1">
                         <div class="icon-box"><i class="ph ph-cloud"></i></div>
-                        <h3>Cloud Infrastructure</h3>
-                        <p>Robust architecture design on AWS, GCP, or Azure. Highly available, secure, and cost-optimized environments.</p>
+                        <h3 data-en="Cloud Infrastructure" data-ar="البنية التحتية السحابية">Cloud Infrastructure</h3>
+                        <p data-en="Robust architecture design on AWS, GCP, or Azure. Highly available, secure, and cost-optimized environments." data-ar="تصميم بنية تحتية قوية على AWS أو GCP أو Azure. بيئات عالية التوفر وآمنة ومُحسنة التكلفة.">Robust architecture design on AWS, GCP, or Azure. Highly available, secure, and cost-optimized environments.</p>
                     </div>
                     
                     <!-- Service 3 -->
                     <div class="service-card glass-panel fade-in-up delay-2">
                         <div class="icon-box"><i class="ph ph-cube"></i></div>
-                        <h3>Kubernetes Control</h3>
-                        <p>Enterprise-grade container orchestration. Effortless scaling, self-healing systems, and zero-downtime rollouts.</p>
+                        <h3 data-en="Kubernetes Control" data-ar="إدارة الـ Kubernetes">Kubernetes Control</h3>
+                        <p data-en="Enterprise-grade container orchestration. Effortless scaling, self-healing systems, and zero-downtime rollouts." data-ar="إدارة كونتينرز على مستوى المؤسسات. سكيلينج سهل، أنظمة بتصلح نفسها، وتحديثات من غير توقف.">Enterprise-grade container orchestration. Effortless scaling, self-healing systems, and zero-downtime rollouts.</p>
                     </div>
                     
                     <!-- Service 4 -->
                     <div class="service-card glass-panel fade-in-up delay-1">
                         <div class="icon-box"><i class="ph ph-file-code"></i></div>
-                        <h3>Infrastructure as Code</h3>
-                        <p>Codify everything using Terraform and Ansible. Version-controlled infrastructure that is predictable and reproducible.</p>
+                        <h3 data-en="Infrastructure as Code" data-ar="الإنفراستركتشر كـ كود">Infrastructure as Code</h3>
+                        <p data-en="Codify everything using Terraform and Ansible. Version-controlled infrastructure that is predictable and reproducible." data-ar="بنكودّ كل حاجة بـ Terraform و Ansible. إنفراستركتشر متحكم فيه بالفيرجن، متوقع وقابل للتكرار.">Codify everything using Terraform and Ansible. Version-controlled infrastructure that is predictable and reproducible.</p>
                     </div>
                     
                     <!-- Service 5 -->
                     <div class="service-card glass-panel fade-in-up delay-2">
                         <div class="icon-box"><i class="ph ph-shield-check"></i></div>
-                        <h3>Monitoring & Security</h3>
-                        <p>Real-time observability via Grafana/Prometheus and proactive threat detection integrated into your pipeline.</p>
+                        <h3 data-en="Monitoring & Security" data-ar="المراقبة والأمان">Monitoring & Security</h3>
+                        <p data-en="Real-time observability via Grafana/Prometheus and proactive threat detection integrated into your pipeline." data-ar="مراقبة لحظية عبر Grafana/Prometheus واكتشاف تهديدات استباقي متكامل مع الـ pipeline بتاعك.">Real-time observability via Grafana/Prometheus and proactive threat detection integrated into your pipeline.</p>
                     </div>
                     
                     <!-- Service 6 -->
                     <div class="service-card glass-panel fade-in-up delay-1">
                         <div class="icon-box"><i class="ph ph-network"></i></div>
-                        <h3>Enterprise Networking</h3>
-                        <p>End-to-end network design, VPN setup, SD-WAN, firewall management, and secure connectivity solutions for businesses of all sizes.</p>
+                        <h3 data-en="Enterprise Networking" data-ar="الشبكات للشركات">Enterprise Networking</h3>
+                        <p data-en="End-to-end network design, VPN setup, SD-WAN, firewall management, and secure connectivity solutions for businesses of all sizes." data-ar="تصميم شبكات شامل، إعداد VPN، SD-WAN، إدارة الفايروول، وحلول اتصال آمنة لكل أحجام الشركات.">End-to-end network design, VPN setup, SD-WAN, firewall management, and secure connectivity solutions for businesses of all sizes.</p>
                     </div>
                     
                     <!-- Service 7 -->
                     <div class="service-card glass-panel bento-large fade-in-up delay-2">
                         <div class="icon-box"><i class="ph ph-browser"></i></div>
-                        <h3>Web Development & SaaS</h3>
-                        <p>Full-stack web applications and SaaS platforms built for performance and scale. From MVP to production-ready, we handle architecture, development, and deployment.</p>
+                        <h3 data-en="Web Development & SaaS" data-ar="تطوير الويب والـ SaaS">Web Development & SaaS</h3>
+                        <p data-en="Full-stack web applications and SaaS platforms built for performance and scale. From MVP to production-ready, we handle architecture, development, and deployment." data-ar="تطبيقات ويب فول ستاك ومنصات SaaS مبنية للأداء والتوسع. من الـ MVP للإنتاج، بنتعامل مع الهندسة المعمارية والتطوير والنشر.">Full-stack web applications and SaaS platforms built for performance and scale. From MVP to production-ready, we handle architecture, development, and deployment.</p>
                     </div>
                 </div>
             </div>
@@ -178,8 +181,8 @@
         <section class="process section-padding bg-alt" id="process">
             <div class="container">
                 <div class="section-header align-center fade-in-up">
-                    <h2 class="section-title">How We <span class="text-gradient">Deliver</span></h2>
-                    <p class="section-subtitle">A battle-tested methodology designed for speed and reliability.</p>
+                    <h2 class="section-title" data-en="How We Deliver" data-ar="شغلنا بيمشي إزاي">How We <span class="text-gradient">Deliver</span></h2>
+                    <p class="section-subtitle" data-en="A battle-tested methodology designed for speed and reliability." data-ar="منهجية مجربة مصممة للسرعة والموثوقية">A battle-tested methodology designed for speed and reliability.</p>
                 </div>
                 
                 <div class="timeline">
@@ -187,8 +190,8 @@
                     <div class="timeline-step fade-in-up">
                         <div class="step-marker">01</div>
                         <div class="step-content">
-                            <h3>Discover</h3>
-                            <p>We analyze your current architecture, identify bottlenecks, assess security risks, and outline a strategic roadmap.</p>
+                            <h3 data-en="Discover" data-ar="اكتشاف">Discover</h3>
+                            <p data-en="We analyze your current architecture, identify bottlenecks, assess security risks, and outline a strategic roadmap." data-ar="بنحلل معاك الوضع الحالي، بنلاقي المشاكل، وبنرسم الخريطة">We analyze your current architecture, identify bottlenecks, assess security risks, and outline a strategic roadmap.</p>
                         </div>
                     </div>
                     
@@ -196,8 +199,8 @@
                     <div class="timeline-step fade-in-up delay-1">
                         <div class="step-marker">02</div>
                         <div class="step-content">
-                            <h3>Design</h3>
-                            <p>Our engineers architect a scalable, highly-available cloud-native blueprint tailored to your exact application needs.</p>
+                            <h3 data-en="Design" data-ar="تصميم">Design</h3>
+                            <p data-en="Our engineers architect a scalable, highly-available cloud-native blueprint tailored to your exact application needs." data-ar="مهندسينا بيبنوا تصميم كلاود نيتيف مناسب لاحتياجاتك بالظبط">Our engineers architect a scalable, highly-available cloud-native blueprint tailored to your exact application needs.</p>
                         </div>
                     </div>
                     
@@ -205,8 +208,8 @@
                     <div class="timeline-step fade-in-up delay-1">
                         <div class="step-marker">03</div>
                         <div class="step-content">
-                            <h3>Build</h3>
-                            <p>We execute the plan using Infrastructure as Code (IaC) and establish robust continuous integration pipelines.</p>
+                            <h3 data-en="Build" data-ar="تنفيذ">Build</h3>
+                            <p data-en="We execute the plan using Infrastructure as Code (IaC) and establish robust continuous integration pipelines." data-ar="بننفذ الخطة بـ IaC ونعمل pipelines قوية للـ CI/CD">We execute the plan using Infrastructure as Code (IaC) and establish robust continuous integration pipelines.</p>
                         </div>
                     </div>
                     
@@ -214,8 +217,8 @@
                     <div class="timeline-step fade-in-up delay-2">
                         <div class="step-marker">04</div>
                         <div class="step-content">
-                            <h3>Scale</h3>
-                            <p>We hand over a fully automated system with comprehensive monitoring, auto-scaling enabled, and ongoing support options.</p>
+                            <h3 data-en="Scale" data-ar="توسيع">Scale</h3>
+                            <p data-en="We hand over a fully automated system with comprehensive monitoring, auto-scaling enabled, and ongoing support options." data-ar="بنسلمك نظام مؤتمت بالكامل مع مراقبة وسكيلينج تلقائي">We hand over a fully automated system with comprehensive monitoring, auto-scaling enabled, and ongoing support options.</p>
                         </div>
                     </div>
                 </div>
@@ -226,60 +229,60 @@
         <section class="pricing section-padding" id="pricing">
             <div class="container">
                 <div class="section-header align-center fade-in-up">
-                    <h2 class="section-title">Transparent <span class="text-gradient">Pricing</span></h2>
-                    <p class="section-subtitle">Flexible engagement models designed for startups at every stage.</p>
+                    <h2 class="section-title" data-en="Transparent Pricing" data-ar="الأسعار بالصراحة">Transparent <span class="text-gradient">Pricing</span></h2>
+                    <p class="section-subtitle" data-en="Flexible engagement models designed for startups at every stage." data-ar="موديلات مرنة لكل مرحلة من مراحل نموك">Flexible engagement models designed for startups at every stage.</p>
                 </div>
                 
                 <div class="pricing-grid">
                     <!-- Starter -->
                     <div class="pricing-card glass-panel fade-in-up">
                         <div class="plan-header">
-                            <h3 class="plan-name">Starter</h3>
+                            <h3 class="plan-name" data-en="Starter" data-ar="البداية">Starter</h3>
                             <div class="plan-price">$399<span class="billing-period">/mo</span></div>
-                            <p class="plan-desc">For early-stage startups needing solid foundations.</p>
+                            <p class="plan-desc" data-en="For early-stage startups needing solid foundations." data-ar="للشركات الناشئة اللي محتاجة أساس متين">For early-stage startups needing solid foundations.</p>
                         </div>
                         <ul class="plan-features">
-                            <li><i class="ph ph-check-circle"></i> Initial Architecture Review</li>
-                            <li><i class="ph ph-check-circle"></i> Basic CI/CD Setup</li>
-                            <li><i class="ph ph-check-circle"></i> Cloud Cost Optimization</li>
-                            <li><i class="ph ph-check-circle"></i> Email Support (48h response)</li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Initial Architecture Review" data-ar="مراجعة أولية للمعمارية">Initial Architecture Review</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Basic CI/CD Setup" data-ar="إعداد CI/CD أساسي">Basic CI/CD Setup</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Cloud Cost Optimization" data-ar="تحسين تكاليف الكلاود">Cloud Cost Optimization</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Email Support (48h response)" data-ar="دعم بالإيميل (رد خلال 48 ساعة)">Email Support (48h response)</span></li>
                         </ul>
-                        <a href="#audit" class="btn btn-secondary btn-full">Get Started</a>
+                        <a href="#audit" class="btn btn-secondary btn-full" data-en="Get Started" data-ar="ابدأ دلوقتي">Get Started</a>
                     </div>
                     
                     <!-- Growth (Popular) -->
                     <div class="pricing-card glass-panel popular fade-in-up delay-1">
-                        <div class="popular-badge">Most Popular</div>
+                        <div class="popular-badge" data-en="Most Popular" data-ar="الأكثر طلباً">Most Popular</div>
                         <div class="plan-header">
-                            <h3 class="plan-name text-gradient">Growth</h3>
+                            <h3 class="plan-name text-gradient" data-en="Growth" data-ar="النمو">Growth</h3>
                             <div class="plan-price">$999<span class="billing-period">/mo</span></div>
-                            <p class="plan-desc">For scaling teams handling increased traffic & complexity.</p>
+                            <p class="plan-desc" data-en="For scaling teams handling increased traffic & complexity." data-ar="للفرق اللي بتكبر وبتتعامل مع ترافيك وتعقيد أكبر">For scaling teams handling increased traffic & complexity.</p>
                         </div>
                         <ul class="plan-features">
-                            <li><i class="ph ph-check-circle"></i> Advanced CI/CD Pipelines</li>
-                            <li><i class="ph ph-check-circle"></i> Infrastructure as Code (Terraform)</li>
-                            <li><i class="ph ph-check-circle"></i> Kubernetes Integration</li>
-                            <li><i class="ph ph-check-circle"></i> 24/7 Monitoring Setup</li>
-                            <li><i class="ph ph-check-circle"></i> Slack Channel Support</li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Advanced CI/CD Pipelines" data-ar="CI/CD Pipelines متقدمة">Advanced CI/CD Pipelines</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Infrastructure as Code (Terraform)" data-ar="إنفراستركتشر كـ كود (Terraform)">Infrastructure as Code (Terraform)</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Kubernetes Integration" data-ar="تكامل Kubernetes">Kubernetes Integration</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="24/7 Monitoring Setup" data-ar="مراقبة 24/7">24/7 Monitoring Setup</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Slack Channel Support" data-ar="دعم عبر Slack">Slack Channel Support</span></li>
                         </ul>
-                        <a href="#audit" class="btn btn-primary btn-glow btn-full">Choose Growth</a>
+                        <a href="#audit" class="btn btn-primary btn-glow btn-full" data-en="Choose Growth" data-ar="اختار النمو">Choose Growth</a>
                     </div>
                     
                     <!-- Scale -->
                     <div class="pricing-card glass-panel fade-in-up delay-2">
                         <div class="plan-header">
-                            <h3 class="plan-name">Scale</h3>
+                            <h3 class="plan-name" data-en="Scale" data-ar="التوسع">Scale</h3>
                             <div class="plan-price">$2,500<span class="billing-period">+ /mo</span></div>
-                            <p class="plan-desc">Enterprise-grade infrastructure management.</p>
+                            <p class="plan-desc" data-en="Enterprise-grade infrastructure management." data-ar="إدارة إنفراستركتشر على مستوى المؤسسات">Enterprise-grade infrastructure management.</p>
                         </div>
                         <ul class="plan-features">
-                            <li><i class="ph ph-check-circle"></i> Everything in Growth</li>
-                            <li><i class="ph ph-check-circle"></i> Multi-Cloud Readiness</li>
-                            <li><i class="ph ph-check-circle"></i> Deep Security Audits</li>
-                            <li><i class="ph ph-check-circle"></i> Custom SLO/SLA Agreements</li>
-                            <li><i class="ph ph-check-circle"></i> Dedicated Engineering Team</li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Everything in Growth" data-ar="كل حاجة في باقة النمو">Everything in Growth</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Multi-Cloud Readiness" data-ar="جاهزية الـ Multi-Cloud">Multi-Cloud Readiness</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Deep Security Audits" data-ar="تدقيق أمني عميق">Deep Security Audits</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Custom SLO/SLA Agreements" data-ar="اتفاقيات SLO/SLA مخصصة">Custom SLO/SLA Agreements</span></li>
+                            <li><i class="ph ph-check-circle"></i> <span data-en="Dedicated Engineering Team" data-ar="فريق هندسي مخصص">Dedicated Engineering Team</span></li>
                         </ul>
-                        <a href="#audit" class="btn btn-secondary btn-full">Contact Sales</a>
+                        <a href="#audit" class="btn btn-secondary btn-full" data-en="Contact Sales" data-ar="كلمنا">Contact Sales</a>
                     </div>
                 </div>
             </div>
@@ -289,8 +292,8 @@
         <section class="portfolio section-padding" id="portfolio">
             <div class="container">
                 <div class="section-header align-center fade-in-up">
-                    <h2 class="section-title">Proven <span class="text-gradient">Results</span></h2>
-                    <p class="section-subtitle">See how we've helped other startups optimize their infrastructure.</p>
+                    <h2 class="section-title" data-en="Proven Results" data-ar="نتايج حقيقية">Proven <span class="text-gradient">Results</span></h2>
+                    <p class="section-subtitle" data-en="See how we've helped other startups optimize their infrastructure." data-ar="شوف إزاي ساعدنا شركات تانية تحسن إنفراستركتشرها">See how we've helped other startups optimize their infrastructure.</p>
                 </div>
                 
                 <div class="case-grid">
@@ -304,7 +307,7 @@
                             <span class="tag">GitHub Actions</span>
                             <span class="tag">AWS</span>
                         </div>
-                        <a href="#" class="case-link">View Project <i class="ph ph-arrow-right"></i></a>
+                        <a href="#" class="case-link"><span data-en="View Project" data-ar="شوف المشروع">View Project</span> <i class="ph ph-arrow-right"></i></a>
                     </div>
                     
                     <!-- Case 2 -->
@@ -317,7 +320,7 @@
                             <span class="tag">Prometheus</span>
                             <span class="tag">GCP</span>
                         </div>
-                        <a href="#" class="case-link">View Project <i class="ph ph-arrow-right"></i></a>
+                        <a href="#" class="case-link"><span data-en="View Project" data-ar="شوف المشروع">View Project</span> <i class="ph ph-arrow-right"></i></a>
                     </div>
                     
                     <!-- Case 3 -->
@@ -330,7 +333,7 @@
                             <span class="tag">AWS EC2</span>
                             <span class="tag">Ansible</span>
                         </div>
-                        <a href="#" class="case-link">View Project <i class="ph ph-arrow-right"></i></a>
+                        <a href="#" class="case-link"><span data-en="View Project" data-ar="شوف المشروع">View Project</span> <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -376,40 +379,40 @@
              <div class="container">
                 <div class="audit-container glass-panel border-glow fade-in-up">
                     <div class="audit-content">
-                        <h2>Get a <span class="text-gradient">Free Infrastructure</span> Audit (Worth $299)</h2>
-                        <p>Discover performance bottlenecks, security vulnerabilities, and cost-saving opportunities in your current setup.</p>
+                        <h2 data-en="Get a Free Infrastructure Audit (Worth $299)" data-ar="احصل على أوديت مجاني للإنفراستركتشر (بقيمة $299)">Get a <span class="text-gradient">Free Infrastructure</span> Audit (Worth $299)</h2>
+                        <p data-en="Discover performance bottlenecks, security vulnerabilities, and cost-saving opportunities in your current setup." data-ar="اكتشف مشاكل الأداء، الثغرات الأمنية، وفرص توفير التكلفة">Discover performance bottlenecks, security vulnerabilities, and cost-saving opportunities in your current setup.</p>
                         <ul class="audit-list">
-                            <li><i class="ph ph-check"></i> Security Architecture Review</li>
-                            <li><i class="ph ph-check"></i> CI/CD Pipeline Assessment</li>
-                            <li><i class="ph ph-check"></i> Cloud Spend Optimization Report</li>
+                            <li><i class="ph ph-check"></i> <span data-en="Security Architecture Review" data-ar="مراجعة معمارية الأمان">Security Architecture Review</span></li>
+                            <li><i class="ph ph-check"></i> <span data-en="CI/CD Pipeline Assessment" data-ar="تقييم الـ CI/CD Pipeline">CI/CD Pipeline Assessment</span></li>
+                            <li><i class="ph ph-check"></i> <span data-en="Cloud Spend Optimization Report" data-ar="تقرير تحسين مصاريف الكلاود">Cloud Spend Optimization Report</span></li>
                         </ul>
                     </div>
                     
                     <div class="audit-form-wrap">
                         <form id="auditForm" class="modern-form">
                             <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" placeholder="John Doe" required>
+                                <label for="name" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                                <input type="text" id="name" data-placeholder-en="John Doe" data-placeholder-ar="محمد أحمد" placeholder="John Doe" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Work Email</label>
-                                <input type="email" id="email" placeholder="john@company.com" required>
+                                <label for="email" data-en="Work Email" data-ar="الإيميل">Work Email</label>
+                                <input type="email" id="email" data-placeholder-en="john@company.com" data-placeholder-ar="mohamed@company.com" placeholder="john@company.com" required>
                             </div>
                             <div class="form-group">
-                                <label for="company">Company URL</label>
-                                <input type="text" id="company" placeholder="company.com" required>
+                                <label for="company" data-en="Company URL" data-ar="رابط الشركة">Company URL</label>
+                                <input type="text" id="company" data-placeholder-en="company.com" data-placeholder-ar="company.com" placeholder="company.com" required>
                             </div>
                             <div class="form-group">
-                                <label for="provider">Current Cloud Provider</label>
+                                <label for="provider" data-en="Current Cloud Provider" data-ar="مزود الكلاود الحالي">Current Cloud Provider</label>
                                 <select id="provider" required>
-                                    <option value="" disabled selected>Select Provider</option>
+                                    <option value="" disabled selected data-en="Select Provider" data-ar="اختار المزود">Select Provider</option>
                                     <option value="aws">AWS</option>
                                     <option value="gcp">Google Cloud</option>
                                     <option value="azure">Azure</option>
-                                    <option value="other">Other / On-premise</option>
+                                    <option value="other" data-en="Other / On-premise" data-ar="تاني / محلي">Other / On-premise</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-glow btn-full form-submit">Request Free Audit <i class="ph ph-paper-plane-right"></i></button>
+                            <button type="submit" class="btn btn-primary btn-glow btn-full form-submit" data-en="Request Free Audit" data-ar="اطلب الأوديت المجاني">Request Free Audit <i class="ph ph-paper-plane-right"></i></button>
                         </form>
                     </div>
                 </div>
@@ -419,10 +422,10 @@
         <!-- 9) Final CTA -->
         <section class="final-cta section-padding align-center">
             <div class="container">
-                <h2 class="fade-in-up">Ready to Scale <span class="text-gradient">Without Downtime?</span></h2>
+                <h2 class="fade-in-up" data-en="Ready to Scale Without Downtime?" data-ar="مستعد تكبّر من غير ما تقع؟">Ready to Scale <span class="text-gradient">Without Downtime?</span></h2>
                 <div class="cta-actions fade-in-up delay-1">
-                    <a href="#audit" class="btn btn-primary btn-glow">Start Your Project</a>
-                    <a href="mailto:contact@egdev.io" class="btn btn-secondary">Schedule Strategy Call</a>
+                    <a href="#audit" class="btn btn-primary btn-glow" data-en="Start Your Project" data-ar="ابدأ مشروعك">Start Your Project</a>
+                    <a href="mailto:contact@egdev.io" class="btn btn-secondary" data-en="Schedule Strategy Call" data-ar="احجز كول استراتيجي">Schedule Strategy Call</a>
                 </div>
             </div>
             <!-- Decorative elements -->
@@ -438,7 +441,7 @@
                 <a href="#" class="logo">
                      <i class="ph-fill ph-git-branch"></i> EgDev
                 </a>
-                <p>DevOps, Cloud, Networking & SaaS Engineering Partner for fast-growing startups and businesses worldwide.</p>
+                <p data-en="DevOps, Cloud, Networking & SaaS Engineering Partner for fast-growing startups and businesses worldwide." data-ar="شريك هندسة الـ DevOps والكلاود والشبكات والـ SaaS للشركات الناشئة والمؤسسات.">DevOps, Cloud, Networking & SaaS Engineering Partner for fast-growing startups and businesses worldwide.</p>
                 <div class="social-links">
                     <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
                     <a href="#" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
@@ -447,41 +450,41 @@
             </div>
             
             <div class="footer-links">
-                <h3>Services</h3>
+                <h3 data-en="Services" data-ar="الخدمات">Services</h3>
                 <ul>
-                    <li><a href="#">CI/CD Pipelines</a></li>
-                    <li><a href="#">Cloud Migration</a></li>
-                    <li><a href="#">Kubernetes Management</a></li>
-                    <li><a href="#">Infrastructure as Code</a></li>
-                    <li><a href="#">Enterprise Networking</a></li>
-                    <li><a href="#">Web & SaaS Development</a></li>
+                    <li><a href="#" data-en="CI/CD Pipelines" data-ar="CI/CD Pipelines">CI/CD Pipelines</a></li>
+                    <li><a href="#" data-en="Cloud Migration" data-ar="نقل للكلاود">Cloud Migration</a></li>
+                    <li><a href="#" data-en="Kubernetes Management" data-ar="إدارة Kubernetes">Kubernetes Management</a></li>
+                    <li><a href="#" data-en="Infrastructure as Code" data-ar="الإنفراستركتشر كـ كود">Infrastructure as Code</a></li>
+                    <li><a href="#" data-en="Enterprise Networking" data-ar="الشبكات للشركات">Enterprise Networking</a></li>
+                    <li><a href="#" data-en="Web & SaaS Development" data-ar="تطوير الويب والـ SaaS">Web & SaaS Development</a></li>
                 </ul>
             </div>
             
             <div class="footer-links">
-                <h3>Company</h3>
+                <h3 data-en="Company" data-ar="الشركة">Company</h3>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="#" data-en="About Us" data-ar="عنا">About Us</a></li>
+                    <li><a href="#" data-en="Careers" data-ar="وظائف">Careers</a></li>
+                    <li><a href="#" data-en="Case Studies" data-ar="أعمالنا">Case Studies</a></li>
+                    <li><a href="#" data-en="Blog" data-ar="المدونة">Blog</a></li>
                 </ul>
             </div>
             
             <div class="footer-links">
-                <h3>Contact</h3>
+                <h3 data-en="Contact" data-ar="تواصل معانا">Contact</h3>
                 <ul>
                     <li><a href="mailto:contact@egdev.io">contact@egdev.io</a></li>
-                    <li><a href="#">Book a Call</a></li>
-                    <li><a href="#">Support Portal</a></li>
+                    <li><a href="#" data-en="Book a Call" data-ar="احجز كول">Book a Call</a></li>
+                    <li><a href="#" data-en="Support Portal" data-ar="بوابة الدعم">Support Portal</a></li>
                 </ul>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; <span id="year"></span> EgDev.io. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> EgDev.io. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></p>
             <div class="legal-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                <a href="#" data-en="Terms of Service" data-ar="شروط الاستخدام">Terms of Service</a>
             </div>
         </div>
     </footer>

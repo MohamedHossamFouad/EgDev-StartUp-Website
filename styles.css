@@ -1270,3 +1270,169 @@ h4 {
     padding-left: 60px;
   }
 }
+
+
+/* =========================================
+   RTL / Arabic Language Support
+   ========================================= */
+[data-lang="ar"] {
+  font-family: 'Cairo', 'Inter', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+[data-lang="ar"] .align-center {
+  text-align: center;
+}
+
+[data-lang="ar"] .nav-container {
+  flex-direction: row-reverse;
+}
+
+[data-lang="ar"] .nav-links {
+  flex-direction: row-reverse;
+}
+
+[data-lang="ar"] .nav-actions {
+  flex-direction: row-reverse;
+}
+
+[data-lang="ar"] .nav-links a::after {
+  left: auto;
+  right: 0;
+}
+
+[data-lang="ar"] .hero-actions {
+  flex-direction: row-reverse;
+}
+
+[data-lang="ar"] .btn i.ph-arrow-right {
+  transform: scaleX(-1);
+}
+
+/* Timeline RTL */
+[data-lang="ar"] .timeline::before {
+  left: auto;
+  right: 24px;
+}
+
+[data-lang="ar"] .timeline-step {
+  padding-left: 0;
+  padding-right: 80px;
+}
+
+[data-lang="ar"] .step-marker {
+  left: auto;
+  right: 0;
+}
+
+[data-lang="ar"] .step-content {
+  text-align: right;
+}
+
+/* Pricing RTL */
+[data-lang="ar"] .plan-features li {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[data-lang="ar"] .plan-features i {
+  margin-top: 2px;
+}
+
+/* Audit list RTL */
+[data-lang="ar"] .audit-list li {
+  flex-direction: row-reverse;
+}
+
+/* Case link RTL */
+[data-lang="ar"] .case-link {
+  flex-direction: row-reverse;
+}
+
+/* Footer RTL */
+[data-lang="ar"] .footer-grid {
+  direction: rtl;
+}
+
+[data-lang="ar"] .footer-bottom {
+  flex-direction: row-reverse;
+}
+
+[data-lang="ar"] .legal-links {
+  flex-direction: row-reverse;
+}
+
+[data-lang="ar"] .social-links {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* Form RTL */
+[data-lang="ar"] .modern-form label {
+  text-align: right;
+}
+
+[data-lang="ar"] .modern-form input,
+[data-lang="ar"] .modern-form select {
+  text-align: right;
+}
+
+/* CTA RTL */
+[data-lang="ar"] .cta-actions {
+  flex-direction: row-reverse;
+}
+
+/* Client info RTL */
+[data-lang="ar"] .client-info {
+  flex-direction: row-reverse;
+}
+
+/* Quote icon RTL */
+[data-lang="ar"] .quote-icon {
+  right: auto;
+  left: 2rem;
+}
+
+/* Badge RTL */
+[data-lang="ar"] .badge {
+  flex-direction: row-reverse;
+}
+
+/* Mobile Nav RTL */
+[data-lang="ar"] .mobile-nav {
+  text-align: center;
+}
+
+/* Marquee - keep LTR for tech logos */
+[data-lang="ar"] .marquee-content {
+  direction: ltr;
+}
+
+/* Responsive RTL */
+@media (max-width: 768px) {
+
+  [data-lang="ar"] .hero-actions,
+  [data-lang="ar"] .cta-actions {
+    flex-direction: column;
+  }
+
+  [data-lang="ar"] .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  [data-lang="ar"] .timeline::before {
+    right: 20px;
+  }
+
+  [data-lang="ar"] .step-marker {
+    width: 40px;
+    height: 40px;
+  }
+
+  [data-lang="ar"] .timeline-step {
+    padding-right: 60px;
+    padding-left: 0;
+  }
+}
