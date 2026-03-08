@@ -1,0 +1,22 @@
+services:
+  egdev-site:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - /srv/apps/egdev:/usr/share/nginx/html:ro
+    networks:
+      - coolify
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.egdev.rule=Host(`egdev.cloud`) || Host(`www.egdev.cloud`)"
+      - "traefik.http.routers.egdev.entrypoints=https"
+      - "traefik.http.routers.egdev.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.egdev-http.rule=Host(`egdev.cloud`) || Host(`www.egdev.cloud`)"
+      - "traefik.http.routers.egdev-http.entrypoints=http"
+      - "traefik.http.routers.egdev-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.services.egdev.loadbalancer.server.port=80"
+
+networks:
+  coolify:
+    external: true
