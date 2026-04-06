@@ -35,28 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // HTML templates for elements that contain inner HTML (spans with gradients, etc.)
     const htmlTemplates = {
         heroTitle: {
-            en: 'Complete <span class="text-gradient">IT & Software</span> Solutions for Your Business',
-            ar: 'حلول <span class="text-gradient">IT + Software</span> متكاملة لشغلك'
+            en: 'Organize & <span class="text-gradient">Scale Your Business</span> with Smart Tech',
+            ar: 'نظّم شغلك <span class="text-gradient">واكبر صح</span> مع EgyDev'
         },
         servicesTitle: {
-            en: 'How We <span class="text-gradient">Help You</span>',
-            ar: 'إزاي بنساعدك <span class="text-gradient">بالظبط</span>'
+            en: 'How We <span class="text-gradient">Transform Your Business</span>',
+            ar: 'إزاي بنطور لك <span class="text-gradient">شغلك</span>'
         },
         processTitle: {
-            en: 'Our <span class="text-gradient">Process</span>',
-            ar: 'خطواتنا <span class="text-gradient">ببساطة</span>'
+            en: 'Our <span class="text-gradient">Proven Process</span>',
+            ar: 'طريقة <span class="text-gradient">شغلنا</span>'
         },
         pricingTitle: {
-            en: 'Our <span class="text-gradient">Plans</span>',
-            ar: 'خطط <span class="text-gradient">الأسعار</span>'
+            en: 'Flexible <span class="text-gradient">Pricing Plans</span>',
+            ar: 'باقات تناسب <span class="text-gradient">ميزانيتك</span>'
         },
         portfolioTitle: {
             en: 'Our Success <span class="text-gradient">Stories</span>',
             ar: 'سابقة <span class="text-gradient">أعمالنا</span>'
         },
         auditTitle: {
-            en: 'Get a <span class="text-gradient">Free</span> Consultation',
-            ar: 'احجز <span class="text-gradient">استشارة مجانية</span>'
+            en: 'Claim Your <span class="text-gradient">Free</span> Tech Audit',
+            ar: 'احجز <span class="text-gradient">مراجعة مجانية</span>'
         },
         finalCtaTitle: {
             en: 'Ready to <span class="text-gradient">Organize Your Business?</span>',
