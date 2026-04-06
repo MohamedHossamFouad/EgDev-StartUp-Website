@@ -35,40 +35,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // HTML templates for elements that contain inner HTML (spans with gradients, etc.)
     const htmlTemplates = {
         heroTitle: {
-            en: 'Your <span class="text-gradient">Full-Stack Tech</span> Engineering Partner',
-            ar: 'إحنا اللي بنبني <span class="text-gradient">الحاجات</span> اللي انت محتاجها'
+            en: 'Complete <span class="text-gradient">IT & Software</span> Solutions for Your Business',
+            ar: 'حلول <span class="text-gradient">IT + Software</span> متكاملة لشغلك'
         },
         servicesTitle: {
-            en: 'Core <span class="text-gradient">Capabilities</span>',
-            ar: 'بنعمل إيه <span class="text-gradient">بالظبط</span>'
+            en: 'How We <span class="text-gradient">Help You</span>',
+            ar: 'إزاي بنساعدك <span class="text-gradient">بالظبط</span>'
         },
         processTitle: {
-            en: 'How We <span class="text-gradient">Deliver</span>',
-            ar: 'إحنا بنشتغل <span class="text-gradient">إزاي</span>'
+            en: 'Our <span class="text-gradient">Process</span>',
+            ar: 'خطواتنا <span class="text-gradient">ببساطة</span>'
         },
         pricingTitle: {
-            en: 'Transparent <span class="text-gradient">Pricing</span>',
-            ar: 'الأسعار بدون <span class="text-gradient">لف ودوران</span>'
+            en: 'Our <span class="text-gradient">Plans</span>',
+            ar: 'خطط <span class="text-gradient">الأسعار</span>'
         },
         portfolioTitle: {
-            en: 'Proven <span class="text-gradient">Results</span>',
-            ar: 'ده اللي عملناه <span class="text-gradient">فعلاً</span>'
+            en: 'Our Success <span class="text-gradient">Stories</span>',
+            ar: 'سابقة <span class="text-gradient">أعمالنا</span>'
         },
         auditTitle: {
-            en: 'Get a <span class="text-gradient">Free Infrastructure</span> Audit (Worth $299)',
-            ar: 'خد <span class="text-gradient">أوديت مجاني</span> للإنفراستركتشر بتاعك'
+            en: 'Get a <span class="text-gradient">Free</span> Consultation',
+            ar: 'احجز <span class="text-gradient">استشارة مجانية</span>'
         },
         finalCtaTitle: {
-            en: 'Ready to Scale <span class="text-gradient">Without Downtime?</span>',
-            ar: 'خلينا نبنيها <span class="text-gradient">صح من الأول</span>'
+            en: 'Ready to <span class="text-gradient">Organize Your Business?</span>',
+            ar: 'جاهز تنظم <span class="text-gradient">شغلك وتكبر؟</span>'
         }
     };
 
-    // Select dropdown translations
-    const providerOptions = {
-        en: ['Select Provider', 'AWS', 'Google Cloud', 'Azure', 'Other / On-premise'],
-        ar: ['اختار', 'AWS', 'Google Cloud', 'Azure', 'غيره / محلي']
-    };
+
 
     function applyLanguage(lang) {
         // Swap text content for all elements with data-en/data-ar
@@ -105,14 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-placeholder-en]').forEach(input => {
             input.placeholder = lang === 'ar' ? input.dataset.placeholderAr : input.dataset.placeholderEn;
         });
-
-        // Handle select dropdown options
-        const select = document.getElementById('provider');
-        if (select) {
-            providerOptions[lang].forEach((text, i) => {
-                if (select.options[i]) select.options[i].text = text;
-            });
-        }
 
         // Re-append icon to hero CTA button
         const heroCta = document.querySelector('.hero-actions .btn-primary');
@@ -234,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.pointerEvents = 'none';
             
             setTimeout(() => {
-                btn.innerHTML = '<i class="ph ph-check-circle"></i> ' + (currentLang === 'ar' ? 'تم! هنتواصل معاك قريب' : 'Audit Requested!');
+                btn.innerHTML = '<i class="ph ph-check-circle"></i> ' + (currentLang === 'ar' ? 'تم! هنكلمك خلال 24 ساعة' : 'Done! We will call you soon');
                 btn.classList.add('btn-glow');
                 auditForm.reset();
                 
