@@ -6,7 +6,7 @@
 
 ## 🌐 Live Preview
 
-Open `index.htmllllllllllllll` in any modern browser — no build step required.
+Open `index.html` in any modern browser — no build step required.
 
 ---
 
